@@ -15,13 +15,14 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	color: inherit;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -52,6 +53,8 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	max-width: 1140px;
+	background: #FFFEF8;
 }
 header {
 	display: flex;
@@ -60,6 +63,33 @@ header {
 }
 section {
 	margin: 50px 0
+}
+
+.nav_bar{
+	text-decoration: none;
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
+
+.footer_{
+	position: absolute;
+    bottom: 0;
+    right: 130px;
 }
 
 h1{
@@ -84,15 +114,80 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+button, input[type="submit"] {
+	cursor: pointer;
+	height: 39px;
+}
+input[type="text"], option, textarea, input[type="email"], #selectCategory {
+	font-family: 'Work Sans';
+	font-size:1em;
+	color: #444444 ;    
+}
+
+input[type="submit"], button {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+	font-size: 1.2em;
+	height: 39px;
+	border: none;
+	display: block;
+}
+
+#login {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 50%;
+    margin: auto;
+}
+
+#login h2 {
+    margin-bottom: 20px;
+}
+
+#login > * {
+    text-align: center;
+}
+
+#login form {
+    text-align: left;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#login label {
+    margin: 2em 0 1em 0;
+}
+
+#login input:not([type="submit"]){
+    height: 50px;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#login a {
+	text-decoration: underline;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	text-decoration: none;
 }
 
 li:hover {
@@ -125,6 +220,7 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -169,20 +265,5 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin : 2em auto ;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px ;
-}
 
-footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
-}
 
