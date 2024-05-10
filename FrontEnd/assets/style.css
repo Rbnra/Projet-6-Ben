@@ -125,7 +125,7 @@ input[type="text"], option, textarea, input[type="email"], #selectCategory {
 	color: #444444 ;    
 }
 
-input[type="submit"], button {
+input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -264,6 +264,71 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
+.mode-edition {
+	display: flex;
+    font-family: 'Work Sans';
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    gap: 20px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo-edition {
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    font-size: 16px;
+    gap: 10px;
+}
+
+#changements {
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    padding: 11px 23px;
+    border-radius: 60px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.filters-design {
+    margin-left: 10px;
+    border: 1px solid #1D6154;
+    border-radius: 60px;
+    font-size: 1.15em;
+    color: #1D6154;
+    background-color: rgb(246, 246, 235);
+    padding: 7px 15px;
+}
+
+.filter-all {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.filter-active {
+    color: #FFFFFF;
+}
+
+#portfolio .filter-active {
+    background-color: #1D6154;
+}
+
+
 
 
 
