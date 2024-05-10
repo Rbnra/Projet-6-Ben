@@ -63,7 +63,31 @@ fetch("http://localhost:5678/api/categories") /*Récuperation de l'API*/
 			});
 		});
 	})
-	.catch( (err) =>
+	.catch((err) =>
 		console.log(err)
 	)
+
+var token = "";
+var connected = false;
+const logButton = document.getElementById("logBtn")
+const buttonModifier = document.getElementById("modifier")
+const edition = document.querySelector(".edition")
+const categories = document.querySelector(".filters")
+const connectedFunction = () => {
+	token = sessionStorage.getItem("token");
+	if (token) {
+		connected = true;
+	}
+
+	if (connected) {
+		logButton.textContent = "logout";
+		buttonModifier.style.visibility = "visible";
+		edition.style.height = "5.5vh";
+		/*categories.style.display = "none";*/
+	} else {
+		buttonModifier.style.visibility = "hidden";
+	}
+}
+
+connectedFunction()
 
