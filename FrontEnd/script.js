@@ -82,7 +82,7 @@ const connectedFunction = () => {
 	if (connected) {
 		logButton.textContent = "logout";
 		buttonModifier.style.visibility = "visible";
-		edition.style.height = "5.5vh";
+		edition.style.height = "5.8vh";
 		/*categories.style.display = "none";*/
 	} else {
 		buttonModifier.style.visibility = "hidden";

@@ -15,7 +15,6 @@
 </head>
 
 <body>
-	<h2 id="connexionAlert">...</h2>
 	<div class="edition">
 		<p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
 	</div>
@@ -47,11 +46,12 @@
 			</article>
 		</section>
 		<section id="portfolio">
-			<h2>Mes Projets</h2>
-			<button class="edit" id="edit-works" aria-hidden="true">
-				<p id="modifier"><i class="fa-regular fa-pen-to-square"></i>
-					modifier</p>
-			</button>
+			<div id="space-only-admin" class="container-only-admin">
+				<h2>Mes projets</h2>
+				<div>
+					<a id ="update-works" class="only-admin update-btn" href="#modal"><i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>
+				</div>
+			</div>
 			<div class="filters"></div>
 			<div class="gallery">
 			</div>
