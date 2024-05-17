@@ -14,6 +14,17 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 
+<!-- Modale -->
+<div id="modal" class="modal">
+	<div class="content gallery_interface">
+		<h2>Galerie photo</h2>
+		<div class="list_works"></div>
+		<hr>
+		<button class="button_add">Ajouter une photo</button>
+		<i class="fa-solid fa-xmark gallery_close"></i>
+	</div>
+</div>
+
 <body>
 	<div class="edition" style="display: none;" id="banner">
 		<p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
@@ -25,7 +36,7 @@
 				<li>projets</li>
 				<li>contact</li>
 				<li><a href="login.html" class="nav_bar" id="logBtn">login</a></li>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram" class="insta"></li>
 			</ul>
 		</nav>
 	</header>
@@ -49,7 +60,7 @@
 			<div id="space-only-admin" class="container-only-admin">
 				<h2>Mes projets</h2>
 				<div>
-					<a id ="modifier" class="only-admin update-btn"><i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>
+					<a id="modifier" class="only-admin update-btn" href="#"><i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>
 				</div>
 			</div>
 			<div class="filters"></div>
@@ -80,6 +91,7 @@
 	</footer>
 	<script src="./index.js"></script>
 	<script src="./login.js"></script>
+	<script src="./modal.js"></script>
 </body>
 
 </html>

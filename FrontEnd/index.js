@@ -90,6 +90,7 @@ function updateUI() {
         buttonModifier.style.visibility = "visible";
         // Afficher la bannière
         document.getElementById('banner').style.display = 'block';
+        categories.style.visibility ="hidden";
     } else {
         // Si l'utilisateur n'est pas connecté, afficher le bouton de connexion
         logButton.textContent = "login";
@@ -118,4 +119,60 @@ logButton.addEventListener("click", (event) => {
         window.location.href = "login.html"; // Remplacez par l'URL de votre page de connexion
     }
 });
+
+let trash = [];
+let snaps = [];
+let list_works = document.querySelector(".list_works"); 
+let modal = document.querySelector(".modal");
+let gallery_interface = document.querySelector(".gallery_interface");
+let gallery_close = document.querySelector(".gallery_close"); // boutton de fermeture de la gallerie d'édition
+
+const modifier = async () => {
+    try {
+        const works = await fetch("http://localhost:5678/api/works"); // Récupération des données depuis l'API
+        let worksData = await works.json(); // Conversion de la réponse en format JSON
+
+        list_works.innerHTML = "";
+
+        worksData.forEach(dataGroup => { // Parcours de chaque groupe de données
+
+            let img = document.createElement("img"); // Crée un élément <img>
+            img.src = dataGroup.imageUrl; // Définit l'attribut 'src' de <img>
+
+            snaps[dataGroup.id] = document.createElement("figure"); // Crée un élément <img> pour chaque projet
+            snaps[dataGroup.id].appendChild(img); // Ajoute <img> à <figure>
+
+            trash[dataGroup.id] = document.createElement("i"); // Crée un élément <i> pour chaque projet
+            trash[dataGroup.id].classList.add('fa-solid', 'fa-trash-can', 'trash');
+            snaps[dataGroup.id].appendChild(trash[dataGroup.id]);
+
+            list_works.appendChild(snaps[dataGroup.id]);
+
+            let urlId = 'http://localhost:5678/api/works/' + dataGroup.id;
+
+            trash[dataGroup.id].addEventListener("click", function () {
+                deleteData(urlId);
+                deletePhoto(urlId);
+            })
+
+
+        });
+    } catch (error) {
+        console.error('error fetching works:', error)
+        throw new Error(`api error status with status code ${response.status}`)
+    }
+}
+
+buttonModifier.addEventListener("click",() => {
+modal.style.display = "flex";
+gallery_interface.style.display = "flex";
+modifier();
+})
+//Pour fermer la gallerie
+gallery_close.addEventListener("click", () => {
+    modal.style.display = "none"
+
+})
+
+//Méthode pour supprmier une image des travaux
 
