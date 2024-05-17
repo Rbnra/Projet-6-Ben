@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Sophie Bluel - Architecte d'intérieur</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
-        rel="stylesheet">
-    <meta name="description" content="">
-    <link rel="stylesheet" href="./assets/style.css">
-    
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+    <script src="https://kit.fontawesome.com/8048b682c0.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
-    <header>
-        <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="nav_bar">projets</a></li>
-                <li class="nav_bar">contact</li>
-                <li><a href="login.html" class="nav_bar" style="font-weight: bold;">login</a></li>
-                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-            </ul>
-        </nav>
-    </header>
+<body class="body-login">
+<header>
+    <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+    <nav>
+        <ul>
+            <li><a href="index.html#projets" class="submenu">projets</a></li>
+            <li><a href="index.html#contact" class="submenu">contact</a></li>
+            <li><a href="login.html" class="submenu">login</a></li>
+            <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section id="login">
-            <h2>Log In</h2>
-            <form>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password">
-                <input type="submit" value="Se connecter" id="loginBtn">
-            </form>
-            <p><a href="#">Mot de passe oublié</a></p>
-        </section>
-    </main>
+<main class="main-login">
+        <div id="msg-error">
+            <i class="fa-sharp fa-solid fa-triangle-exclamation"></i>
+            <h3>Erreur dans l’identifiant ou le mot de passe</h3>
+        </div>
+        <h2>Log In</h2>
+        <form class="form-login" method="post">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email" required/>
+            <label for="pass">Mot de passe</label>
+            <input id="password" type="password" name="password" required/>
+            <input type="submit" name="submit-login" value="Se connecter"/>
+        </form>
+        <a href="#">Mot de passe oublié</a>     
+</main>
 
-    <footer>
-        <nav>
-            <ul class="footer_">
-                <li>Mentions Légales</li>
-            </ul>
-        </nav>
-    </footer>
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
     <script src="./login.js"></script>
+    <script src="function.js"></script>
 </body>
 </html>

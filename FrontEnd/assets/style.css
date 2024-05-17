@@ -218,6 +218,7 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
+	padding-left: 100px;
 }
 
 .gallery {
@@ -328,34 +329,12 @@ margin: auto;
 }
 
 
-/*bouton modifier*/
-.edit {
-	display: flex;
-	gap: 5px;
-	position: relative;
-	background: 0;
-	border: 0;
-	cursor: pointer;
-	padding: 0;
-	z-index: 1;
-}
-
-.edit i {
-	font-size: 1.1em;
-	padding-left: 10px;
-}
-
-img{
-	width: 50%;
-}
-
-
 /*Banner edition */
 .edition{
 	transition-duration: 2s;
 	background-color: black;
 	width: 100%;
-	height: 5.0vh;
+	height: 5.9vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -366,10 +345,11 @@ img{
 	color: white;
 	font-size: 16px;
 	white-space: nowrap;
-	margin-left: -350px;
+	margin-left: 28%;
+	padding-top: 10px;
 }
 .edition p i{
-	margin-right: 6%;
+	margin-right: 2%;
 }
 
 .container-only-admin {
@@ -382,4 +362,57 @@ img{
 
 .container-only-admin:hover{
 	color: #B1663C;
+}
+
+.submenu {
+	text-decoration: none;
+	color: #000000;
+}
+
+.submenu a:visited {
+	font-weight: bold;
+}
+
+.main-login h2 {
+	margin: 60px 0 40px 0;
+}
+
+.main-login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-login a {
+	font-family: 'Work Sans';
+	text-decoration: underline;
+}
+
+#msg-error {
+	display: none;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+	border: 1px solid red;
+	border-radius: 60px;
+	background-color: red;
+	color: white;
+	font-family: 'Syne';
+	padding: 10px 20px;
+}
+
+.form-login {
+	display: flex;
+	flex-direction: column;
+	min-width: 380px;
+}
+
+#email, #password {
+    font-family: 'Work Sans';
+    margin-top: 8px;
+    margin-bottom: 32px;
+    min-height: 48px;
+    border: none;
+    font-size: 1.2em;
 }

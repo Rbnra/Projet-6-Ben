@@ -1,30 +1,43 @@
-const baseApiUrl = "http://localhost:5678/api/"; 
+const form = document.getElementsByClassName("form-login")[0].elements;
+const messageError = document.getElementById("msg-error");
+const loginURL = "http://localhost:5678/api/users/login";
 
-document.addEventListener("submit", (e) => {
-  e.preventDefault(); /*Evite rechargement de la page*/
-  let form = {
-    email: document.getElementById("email"),
-    password: document.getElementById("password"),
-  };
+// Se connecter lorque l'on clic sur le bouton
+form["submit-login"].addEventListener("click",function (event) {
+event.preventDefault();
 
-  fetch(`${baseApiUrl}users/login`, { /*Envoie une requête HTTP POST à l'URL*/
-    method: "POST", /*Spécifie que la méthode HTTP utilisée est POST, ce qui est approprié pour soumettre des informations sensibles*/
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ /*convertit l'objet JavaScript contenant l'e-mail et le mot de passe en une chaîne JSON pour l'envoyer dans le corps de la requête.*/
-      email: form.email.value,
-      password: form.password.value,
-    }),
-  }).then((response) => {
-    if (response.status !== 200) {
-      alert("Email ou mot de passe erronés");
-    } else {
-      response.json().then((data) => {
-        sessionStorage.setItem("token", data.token); //STORE TOKEN /*Si la réponse de la requête est réussie (statut 200), cette ligne stocke le token renvoyé par l'API dans le sessionStorage du navigateur. Le token est généralement utilisé pour authentifier les futures requêtes de l'utilisateur.*/
-        window.location.replace("index.html");
-      });
-    }
-  });
-});
+  // Validation du formulaire
+  if (form.email.value === "" || form.password.value === "") {
+    messageError.style.display = "flex";
+    return;
+  } else {
+    messageError.style.display = "none";
+  }
+
+    fetch(loginURL, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+            email: form.email.value,
+            password: form.password.value,
+        }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        // Stocker les informations d'authentification et rediriger
+        localStorage.setItem('auth', JSON.stringify(data));
+        const auth = JSON.parse(localStorage.getItem('auth'));
+        if (auth && auth.token) {
+          window.location = "index.html";
+        } else {
+          messageError.style.display = "flex";
+        }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      messageError.style.display = "flex";
+    });
+})
