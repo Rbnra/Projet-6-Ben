@@ -176,3 +176,50 @@ gallery_close.addEventListener("click", () => {
 
 //Méthode pour supprmier une image des travaux
 
+// Get the modal elements
+var mainModal = document.getElementById('modal');
+var addPhotoModal = document.getElementById('myModal');
+
+// Get the button that opens the add photo modal
+var addPhotoBtn = document.querySelector('.button_add');
+
+// Get the <span> elements that close the modals
+var closeBtns = document.querySelectorAll('.close, .gallery_close');
+
+// When the user clicks the button, open the add photo modal
+addPhotoBtn.onclick = function() {
+    mainModal.style.display = "none"; // Hide the main modal
+    addPhotoModal.style.display = "block"; // Show the add photo modal
+}
+
+// When the user clicks on <span> (x), close the modals
+closeBtns.forEach(function(btn) {
+    btn.onclick = function() {
+        mainModal.style.display = "none";
+        addPhotoModal.style.display = "none";
+    }
+});
+
+// When the user clicks anywhere outside of the modals, close them
+window.onclick = function(event) {
+    if (event.target == mainModal) {
+        mainModal.style.display = "none";
+    } else if (event.target == addPhotoModal) {
+        addPhotoModal.style.display = "none";
+    }
+}
+
+// Optionally, if you have a button to open the main gallery modal
+document.getElementById('openModalBtn').onclick = function() {
+    mainModal.style.display = "block";
+}
+
+// Récupérer l'élément input type file et le bouton "Ajouter photo"
+const fileInput = document.getElementById('file-upload');
+const addButton = document.querySelector('.custom-file-upload');
+
+// Gestionnaire d'événements pour le clic sur le bouton "Ajouter une photo"
+addButton.addEventListener('click', function() {
+    // Déclencher le clic sur l'élément input type file
+    fileInput.click();
+});
