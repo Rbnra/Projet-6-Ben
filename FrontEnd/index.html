@@ -39,21 +39,24 @@
 			</label>
 			<p class="jpg">jpg, png : 4mo max</p>
 		</div>
+		<div class="image-preview-container">
+			<img id="imagePreview" src="" alt="Prévisualisation" class="image-preview">
+		</div>
 		<form>
 			<label for="title" class="title1">Titre</label>
 			<input type="text" id="title" name="title" class="title2">
 			<label for="category" class="title1">Catégorie</label>
 			<select id="category" name="category" class="title2">
-				<option value="categorie1"></option>
-				<option value="categorie2"></option>
-				<option value="categorie3"></option>
+				<option value="categorie1">Tous</option>
+				<option value="categorie2">Objets</option>
+				<option value="categorie3">Appartements</option>
+				<option value="categorie4">Hotels & restaurants</option>
 			</select>
 			<hr class="ligne">
 			<button type="submit" class="button_add valider1" >Valider</button>
 		</form>
 	</div>
 </div>
-
 
 <body>
 	<div class="edition" style="display: none;" id="banner">
@@ -122,7 +125,6 @@
 	</footer>
 	<script src="./index.js"></script>
 	<script src="./login.js"></script>
-	<script src="./modal.js"></script>
 </body>
 
 </html>

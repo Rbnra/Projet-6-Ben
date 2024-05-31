@@ -660,6 +660,34 @@ input[type="file"] {
     left: -9999px; /* Déplacer l'élément hors de la vue */
 }
 
+.image-preview-container {
+    text-align: center;
+
+}
+
+.image-preview {
+    max-width: 100%;
+    max-height: 168px;
+	margin-top: -188px;
+    display: none; /* Hide image preview initially */
+}
+
+.custom-file-upload {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.custom-file-upload.preview-active .ajouter,
+.custom-file-upload.preview-active .fa-image {
+    display: none;
+}
+
+.custom-file-upload.preview-active {
+    border: none; /* Optionally remove border when preview is active */
+}
 
 
 

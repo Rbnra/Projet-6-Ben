@@ -1,9 +1,9 @@
-const form = document.getElementsByClassName("form-login")[0].elements;
+const form = document.getElementsByClassName("form-login")[0]?.elements;
 const messageError = document.getElementById("msg-error");
 const loginURL = "http://localhost:5678/api/users/login";
 
 // Se connecter lorque l'on clic sur le bouton
-form["submit-login"].addEventListener("click",function (event) {
+form["submit-login"]?.addEventListener("click",function (event) {
 event.preventDefault();
 
   // Validation du formulaire
