@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<!-- Modale -->
+<!-- Modale principale -->
 <div id="modal" class="modal">
 	<div class="content gallery_interface">
 		<h2 class="galerie1">Galerie photo</h2>
@@ -31,9 +31,10 @@
 		<i class="fa-solid fa-xmark gallery_close"></i>
 		<a id="arrow-return" href="#"><i class="fa-solid fa-arrow-left return"></i></a>
 		<h2 class="galerie2">Ajout photo</h2>
+		<form action="#" method="post" enctype="multipart/form-data">
 		<div class="upload-section">
 			<label for="file-upload" class="custom-file-upload">
-				<input id="file-upload" type="file" accept=".jpg,.png"/>
+				<input id="file-upload" type="file" accept=".jpg,.png" style="display: none" />
 				<i id= "photo-add-icon" class="fa-regular fa-image"></i>
 				<span class="ajouter"> + Ajouter photo</span>
 			</label>
@@ -42,18 +43,13 @@
 		<div class="image-preview-container">
 			<img id="imagePreview" src="" alt="Prévisualisation" class="image-preview">
 		</div>
-		<form>
+		
 			<label for="title" class="title1">Titre</label>
 			<input type="text" id="title" name="title" class="title2">
 			<label for="category" class="title1">Catégorie</label>
-			<select id="category" name="category" class="title2">
-				<option value="categorie1">Tous</option>
-				<option value="categorie2">Objets</option>
-				<option value="categorie3">Appartements</option>
-				<option value="categorie4">Hotels & restaurants</option>
-			</select>
+			<select id="category" name="category" class="title2"></select>
 			<hr class="ligne">
-			<button type="submit" class="button_add valider1" >Valider</button>
+			<button type="submit" class="button_validate valider" >Valider</button>
 		</form>
 	</div>
 </div>
@@ -124,7 +120,6 @@
 		</nav>
 	</footer>
 	<script src="./index.js"></script>
-	<script src="./login.js"></script>
 </body>
 
 </html>
