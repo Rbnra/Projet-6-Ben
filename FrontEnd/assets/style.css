@@ -558,7 +558,6 @@ li:hover {
 	justify-content: center;
 	display: none;
 	z-index: 1000;
-
 }
 
 .modal div {
@@ -572,7 +571,7 @@ li:hover {
 	align-items: center;
 	flex-direction: column;
 	border-radius: 10px;
-	height: 68%;
+	height: 90%;
 }
 
 .modal .gallery_interface .list_works {
@@ -583,7 +582,6 @@ li:hover {
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	margin: 50px 120px 40px;
-
 }
 
 .modal .gallery_interface .list_works figure {
@@ -614,15 +612,15 @@ li:hover {
 
 .modal .gallery_interface button {
 	border: none;
-	margin-bottom: 5%;
-	width: 30%;
+	width: 15%;
 	height: 5vh;
 	border-radius: 60px;
 	background-color: #1D6154;
 	color: white;
 	font-size: 14px;
 	cursor: pointer;
-	margin-top: 30px;
+	margin-top: 550px;
+	position: fixed;
 }
 
 .modal div .gallery_close {
@@ -644,9 +642,8 @@ li:hover {
 	color: #B9C5CC;
 	width: 100%;
 	margin-top: 10px;
+	margin-left: -20px;
 }
-
-
 
 .galerie1 {
 	padding-top: 50px;
@@ -666,12 +663,12 @@ li:hover {
 	font-weight: 400;
 }
 
-
 hr {
 	background-color: #B3B3B3;
-	width: 68%;
+	width: 30%;
+	margin-top: 500px;
+	position: fixed;
 }
-
 
 .modal-content {
 	width: 45%;
@@ -680,7 +677,8 @@ hr {
 	align-items: center;
 	flex-direction: column;
 	border-radius: 10px;
-	height: 65%;
+	height: 90%;
+	margin-top: 0px;
 }
 
 .upload-section {
@@ -694,7 +692,6 @@ hr {
 }
 
 .custom-file-upload {
-
 	padding: 6px 12px;
 	cursor: pointer;
 	border-radius: 4px;
@@ -715,7 +712,6 @@ form {
 	font-weight: 500;
 	line-height: normal;
 	margin-left: 125px;
-
 }
 
 .title2 {
@@ -736,8 +732,10 @@ form {
 	font-size: 14px;
 	margin-top: 30px;
 	margin-left: 220px;
-	width: 237px;
+	width: 15%;
 	height: 36px;
+	position: fixed;
+	margin-top: 450px;
 }
 
 .validerDisabled {
@@ -746,7 +744,9 @@ form {
 }
 
 .ligne {
-	margin-top: 60px;
+	position: fixed;
+	margin-top: 410px;
+	margin-left: 120px;
 }
 
 .jpg {
@@ -776,7 +776,6 @@ input[type="file"] {
 
 .image-preview-container {
 	text-align: center;
-
 }
 
 .image-preview {
