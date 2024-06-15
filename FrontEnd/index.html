@@ -14,47 +14,47 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<!-- Modale principale -->
-<div id="modal" class="modal">
-	<div class="content gallery_interface">
-		<h2 class="galerie1">Galerie photo</h2>
-		<div class="list_works"></div>
-		<hr>
-		<button class="button_add">Ajouter une photo</button>
-		<i class="fa-solid fa-xmark gallery_close"></i>
-	</div>
-</div>
-
-<!-- Add Photo Modal -->
-<div id="myModal" class="modal">
-	<div class="modal-content">
-		<i class="fa-solid fa-xmark gallery_close"></i>
-		<a id="arrow-return" href="#"><i class="fa-solid fa-arrow-left return"></i></a>
-		<h2 class="galerie2">Ajout photo</h2>
-		<form action="#" method="post" enctype="multipart/form-data">
-		<div class="upload-section">
-			<label for="file-upload" class="custom-file-upload">
-				<input id="file-upload" type="file" accept=".jpg,.png" style="display: none" />
-				<i id= "photo-add-icon" class="fa-regular fa-image"></i>
-				<span class="ajouter"> + Ajouter photo</span>
-			</label>
-			<p class="jpg">jpg, png : 4mo max</p>
-		</div>
-		<div class="image-preview-container">
-			<img id="imagePreview" src="" alt="Prévisualisation" class="image-preview">
-		</div>
-		
-			<label for="title" class="title1">Titre</label>
-			<input type="text" id="title" name="title" class="title2">
-			<label for="category" class="title1">Catégorie</label>
-			<select id="category" name="category" class="title2"></select>
-			<hr class="ligne">
-			<button type="submit" class="button_validate valider" >Valider</button>
-		</form>
-	</div>
-</div>
-
 <body>
+	<!-- Modale principale -->
+	<div id="modal" class="modal">
+		<div class="content gallery_interface">
+			<h2 class="galerie1">Galerie photo</h2>
+			<div class="list_works"></div>
+			<hr>
+			<button class="button_add">Ajouter une photo</button>
+			<i class="fa-solid fa-xmark gallery_close"></i>
+		</div>
+	</div>
+
+	<!-- Add Photo Modal -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<i class="fa-solid fa-xmark gallery_close"></i>
+			<a id="arrow-return" href="#"><i class="fa-solid fa-arrow-left return"></i></a>
+			<h2 class="galerie2">Ajout photo</h2>
+			<form action="#" method="post" enctype="multipart/form-data">
+				<div class="upload-section">
+					<label for="file-upload" class="custom-file-upload">
+						<input id="file-upload" type="file" accept=".jpg,.png" style="display: none">
+						<i id="photo-add-icon" class="fa-regular fa-image"></i>
+						<span class="ajouter"> + Ajouter photo</span>
+					</label>
+					<p class="jpg">jpg, png : 4mo max</p>
+				</div>
+				<div class="image-preview-container">
+					<img id="imagePreview" src="#" alt="Prévisualisation" class="image-preview">
+				</div>
+
+				<label for="title" class="title1">Titre</label>
+				<input type="text" id="title" name="title" class="title2">
+				<label for="category" class="title1">Catégorie</label>
+				<select id="category" name="category" class="title2"></select>
+				<hr class="ligne">
+				<button type="submit" class="button_validate valider">Valider</button>
+			</form>
+		</div>
+	</div>
+
 	<div class="edition" style="display: none;" id="banner">
 		<p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
 	</div>
