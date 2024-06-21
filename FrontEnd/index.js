@@ -424,7 +424,7 @@ const upLoadFile = async () => {
             formData.append('title', title);
             formData.append('category', optionId);
 
-            await postDataToBdd(token, formData, title, optionName);
+            await uploadWorkToBDD(token, formData, title, optionName);
         } catch (error) {
             console.error('Error converting image or uploading file:', error);
         }
@@ -436,7 +436,7 @@ const upLoadFile = async () => {
 
 
 //Permet d'ajouter un work dans la BDD ensuite dans la gallery
-const postDataToBdd = async (token, formData, title, optionName) => {
+const uploadWorkToBDD = async (token, formData, title, optionName) => {
     const urlPostWork = `${BASE_URL}works`;
     const confirmation = confirm(`Voulez-vous ajouter ${title} à la gallerie?`);
     if (!confirmation) return;
@@ -452,7 +452,7 @@ const postDataToBdd = async (token, formData, title, optionName) => {
         }
         const responseData = await response.json();
         console.log('Successful response:', responseData);
-        addToWorksData(responseData, optionName);
+        appendGallery(responseData, optionName);
         galleryContainer.innerHTML = ""; // Vider le contenu de la galerie
         modifier(); // Rafraîchir la galerie
         getWorks(); // Rafraîchir la liste des travaux
@@ -463,8 +463,8 @@ const postDataToBdd = async (token, formData, title, optionName) => {
 };
 
 
-const addToWorksData = (data, optionName) => {
-    newWork = {};
+const appendGallery = (data, optionName) => {
+   let newWork = {};
     newWork.title = data.title;
     newWork.id = data.id;
     newWork.category = { id: data.optionId, name: optionName };
