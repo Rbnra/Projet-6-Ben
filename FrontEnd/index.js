@@ -119,8 +119,6 @@ const filterWorksByCategory = (categoryId) => {
 
 //Appel de la fonction fetchCategories lorsque la page est chargée ou lorsque c'est nécessaire
 document.addEventListener('DOMContentLoaded', fetchCategories);
-
-
 const logButton = document.getElementById("logBtn");
 const buttonModifier = document.getElementById("modifier");
 const edition = document.querySelector(".edition");
@@ -209,7 +207,6 @@ const modifier = async () => {
                 modal.style.display = "none"
             })
 
-
         });
     } catch (error) {
         console.error('error fetching works:', error)
@@ -225,7 +222,6 @@ buttonModifier.addEventListener("click", () => {
 //Pour fermer la gallerie
 gallery_close.addEventListener("click", () => {
     modal.style.display = "none"
-
 })
 
 const galleryContainer = document.querySelector(".gallery")
@@ -291,7 +287,6 @@ const selectCategory = () => {
     });
 };
 
-
 // Get the modal elements
 const mainModal = document.getElementById('modal');
 const addPhotoModal = document.getElementById('myModal');
@@ -328,7 +323,6 @@ window.onclick = function (event) {
     }
 }
 
-
 // Récupération du lien de retour
 const returnIcon = document.getElementById('arrow-return');
 
@@ -343,7 +337,6 @@ returnIcon.addEventListener('click', function (event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
     showMainModal();
 });
-
 
 // Récupérer les éléments HTML nécessaires
 const fileInput = document.getElementById('file-upload');
@@ -386,15 +379,12 @@ form.addEventListener('submit', async function (e) {
 
 });
 
-
-
 //Pour transformer l'image en blob (binary large object) afin de faciliter le televersement.
 const dataURLtoBlob = async (dataurl) => {
     const response = await fetch(dataurl);
     const blob = await response.blob();
     return blob;
 };
-
 
 //Pour envoyer l'image ou le work au serveur
 const upLoadFile = async () => {
@@ -432,9 +422,6 @@ const upLoadFile = async () => {
     reader.readAsDataURL(selectedFile);
 };
 
-
-
-
 //Permet d'ajouter un work dans la BDD ensuite dans la gallery
 const uploadWorkToBDD = async (token, formData, title, optionName) => {
     const urlPostWork = `${BASE_URL}works`;
@@ -464,15 +451,13 @@ const uploadWorkToBDD = async (token, formData, title, optionName) => {
 
 
 const appendGallery = (data, optionName) => {
-   let newWork = {};
+    let newWork = {};
     newWork.title = data.title;
     newWork.id = data.id;
     newWork.category = { id: data.optionId, name: optionName };
     newWork.imageUrl = data.imageUrl;
     allWorks.push(newWork);
 };
-
-
 
 const submitButton = document.querySelector("#myModal form button[type='submit']");
 
@@ -481,8 +466,6 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.classList.add('validerDisabled');
     submitButton.disabled = true;
 });
-
-
 
 //Mettre à jour l'état du bouton "Valider"
 const updateSubmitButtonState = () => {
@@ -507,8 +490,6 @@ document.getElementById('title').addEventListener('input', updateSubmitButtonSta
 document.getElementById('category').addEventListener('change', updateSubmitButtonState);
 fileInput.addEventListener('change', updateSubmitButtonState);
 
-
-
 // Gestion de la fermeture de la modale d'ajout de photo
 
 document.querySelectorAll('.gallery_close').forEach(el => el.addEventListener('click', function () {
@@ -516,13 +497,10 @@ document.querySelectorAll('.gallery_close').forEach(el => el.addEventListener('c
     resetFileInput();
 }));
 
-
-
 const resetFileInput = () => {
     fileInput.value = ''; // Réinitialiser l'élément input type file
     document.getElementById('title').value = ''; // Réinitialiser le champs title
     imagePreview.src = '';
     imagePreview.style.display = 'none'; // Masquer la prévisualisation de l'image
     addButton.style.display = 'inline'; // Afficher le bouton "Ajouter photo"
-
 } 
